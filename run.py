@@ -1,20 +1,4 @@
-# import gspread
-# from google.oauth2.service_account import Credentials
 
-# SCOPE = [
-#     "https://www.googleapis.com/auth/spreadsheets",
-#     "https://www.googleapis.com/auth/drive.file",
-#     "https://www.googleapis.com/auth/drive"
-#     ]
-
-# CREDS = Credentials.from_service_account_file('creds.json')
-# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-# SHEET = GSPREAD_CLIENT.open('contactBook')
-
-# # Access the contact information
-# directory = SHEET.worksheet('Directory')
-# contactInfo = directory.get_all_values()
 
 # Create Contact Info Model
 class Person:
@@ -32,12 +16,12 @@ class Person:
     # convert people objects and print them to strings
     # String Magic Method
     def __str__(self):
-        return_string = "---------------\n"
-        return_string += f"Name: {self.first} {self.last}\n"
-        return_string += f"Email: {self.email}\n"
-        return_string += f"Contact Number: {self.number}\n"
-        return_string += f"Address: {self.address}\n"
-        return_string += "---------------\n"
+        return_string = "---------------"
+        return_string += f"Name: {self.first} {self.last}"
+        return_string += f"Email: {self.email}"
+        return_string += f"Contact Number: {self.number}"
+        return_string += f"Address: {self.address}"
+        return_string += "---------------"
         return return_string
 
 
@@ -56,7 +40,7 @@ while users_input != "q":
     print("q) Quit Program")
     users_input = input("Select Option:")
 
-    if users_input == 1:
+    if users_input == "1":
         print("Enter your contacts information")
 
         # Variables
@@ -67,11 +51,18 @@ while users_input != "q":
         address = input("Enter Address = ")
 
         ourContact = Person(firstName, lastName, email, number, address)
-
+        contacts.append(ourContact)
+             
         print('Thank you, Information received')
 
+    elif users_input == "2":
+        for contact in contacts:
+            print(contact)
+        print("All contacts displaying, hit enter to continue")
 
-print("Please enter your contact's information")
+    elif users_input.lower() == "q":
+        break
+
 
 
 
