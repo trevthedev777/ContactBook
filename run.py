@@ -16,15 +16,16 @@ SHEET = GSPREAD_CLIENT.open('contactBook')
 directory = SHEET.worksheet('Directory')
 contactInfo = directory.get_all_values()
 
-print(contactInfo)
+# print(contactInfo)
 
-# print('')
-# print('============================')
-# print('============================')
-# print('Welcome To Your Contact Book')
-# print('============================')
-# print('============================')
-# print('')
-# print('Contacts are loading....')
-# print('')
+print("Welcome to the address book program")
+print("Please enter your contact's information")
 
+# Variables
+firstName = input("First name = ")
+lastName = input("last name = ")
+email = input("Email Address = ")
+number = int(input("Number = "))
+address = input("Enter Address = ")
+
+print('Thank you, Information received')
