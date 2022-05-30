@@ -31,5 +31,8 @@ class ConsoleInputManager:
         name, address, email, phone = self.__getContactInformationFromUser()
         if self.contactManager.deleteContact(
             name, address, email, phone):  
-        print("Successfully Deleted!")
+                print("Successfully Deleted!")
+        else:
+            print("Failed to find contact, please try again")
+
 
