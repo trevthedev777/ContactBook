@@ -27,3 +27,9 @@ class ConsoleInputManager:
         name, address, email, phone = self.__getContactInformationFromUser()
         contact =  self.contactManager.addContact(name, address, email, phone)
 
+    def __deleteContactFromContacts(self):
+        name, address, email, phone = self.__getContactInformationFromUser()
+        if self.contactManager.deleteContact(
+            name, address, email, phone):  
+        print("Successfully Deleted!")
+
