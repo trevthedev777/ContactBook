@@ -24,4 +24,6 @@ class ConsoleInputManager:
         phone = input()
 
     def __addContactToContacts(self):
-        
+        name, address, email, phone = self.__getContactInformationFromUser()
+        contact =  self.contactManager.addContact(name, address, email, phone)
+
