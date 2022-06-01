@@ -1,5 +1,3 @@
-
-
 # Create Contact Info Model
 class Person:
     def __init__(self, first, last, email, number, address):
@@ -10,17 +8,17 @@ class Person:
         self.address = address
 
     def full_name(self):
-        print(f"{self.first} {self.last}")
+        return f"{self.first} {self.last}"
 
     # dunder method
     # convert people objects and print them to strings
     # String Magic Method
     def __str__(self):
         return_string = "---------------"
-        return_string += f"Name: {self.first} {self.last}"
-        return_string += f"Email: {self.email}"
-        return_string += f"Contact Number: {self.number}"
-        return_string += f"Address: {self.address}"
+        return_string += f" Name: {self.first} {self.last} |"
+        return_string += f" Email: {self.email} |"
+        return_string += f" Contact Number: {self.number} |"
+        return_string += f" Address: {self.address} "
         return_string += "---------------"
         return return_string
 
@@ -70,7 +68,7 @@ while users_input != "q":
             print(contact)
         print("All contacts displaying, hit enter to continue")
 
-    elif users_input == 3:
+    elif users_input == "3":
         search = input("Search for a contact....\n")
         for contact in contacts:
             # .full_name() allows us to search for the 
@@ -83,4 +81,4 @@ while users_input != "q":
 
 # Return The Value of the Person
 ourContact = Person(firstName, lastName, email, number, address)
-print(ourContact)
+
